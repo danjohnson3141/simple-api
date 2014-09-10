@@ -11,15 +11,7 @@ class GroupsController < ApplicationController
   # GET /groups/1
   # GET /groups/1.json
   def show
-  end
-
-  # GET /groups/new
-  def new
-    @group = Group.new
-  end
-
-  # GET /groups/1/edit
-  def edit
+    render json: @group
   end
 
   # POST /groups
@@ -70,6 +62,6 @@ class GroupsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def group_params
-      params.require(:group).permit(:name, :description, :visible, :leavable, :member_list, :group_type_id, :owner_user_id, :app_sponsor_id, :created_by, :updated_by)
+      params.require(:group).permit(:name, :description, :group_type_id, :owner_user_id)
     end
 end
