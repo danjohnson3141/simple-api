@@ -1,0 +1,33 @@
+<h1>Listing group_types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Created by</th>
+      <th>Updated by</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @group_types.each do |group_type| %>
+      <tr>
+        <td><%= group_type.name %></td>
+        <td><%= group_type.description %></td>
+        <td><%= group_type.created_by %></td>
+        <td><%= group_type.updated_by %></td>
+        <td><%= link_to 'Show', group_type %></td>
+        <td><%= link_to 'Edit', edit_group_type_path(group_type) %></td>
+        <td><%= link_to 'Destroy', group_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Group type', new_group_type_path %>

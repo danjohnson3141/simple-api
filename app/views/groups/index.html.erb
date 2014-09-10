@@ -1,0 +1,45 @@
+<h1>Listing groups</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Visible</th>
+      <th>Leavable</th>
+      <th>Member list</th>
+      <th>Group type</th>
+      <th>Owner user</th>
+      <th>App sponsor</th>
+      <th>Created by</th>
+      <th>Updated by</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @groups.each do |group| %>
+      <tr>
+        <td><%= group.name %></td>
+        <td><%= group.description %></td>
+        <td><%= group.visible %></td>
+        <td><%= group.leavable %></td>
+        <td><%= group.member_list %></td>
+        <td><%= group.group_type %></td>
+        <td><%= group.owner_user_id %></td>
+        <td><%= group.app_sponsor_id %></td>
+        <td><%= group.created_by %></td>
+        <td><%= group.updated_by %></td>
+        <td><%= link_to 'Show', group %></td>
+        <td><%= link_to 'Edit', edit_group_path(group) %></td>
+        <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Group', new_group_path %>

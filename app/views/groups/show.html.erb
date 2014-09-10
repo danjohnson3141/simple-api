@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @group.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @group.description %>
+</p>
+
+<p>
+  <strong>Visible:</strong>
+  <%= @group.visible %>
+</p>
+
+<p>
+  <strong>Leavable:</strong>
+  <%= @group.leavable %>
+</p>
+
+<p>
+  <strong>Member list:</strong>
+  <%= @group.member_list %>
+</p>
+
+<p>
+  <strong>Group type:</strong>
+  <%= @group.group_type %>
+</p>
+
+<p>
+  <strong>Owner user:</strong>
+  <%= @group.owner_user_id %>
+</p>
+
+<p>
+  <strong>App sponsor:</strong>
+  <%= @group.app_sponsor_id %>
+</p>
+
+<p>
+  <strong>Created by:</strong>
+  <%= @group.created_by %>
+</p>
+
+<p>
+  <strong>Updated by:</strong>
+  <%= @group.updated_by %>
+</p>
+
+<%= link_to 'Edit', edit_group_path(@group) %> |
+<%= link_to 'Back', groups_path %>

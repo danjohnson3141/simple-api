@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @group_request.user %>
+</p>
+
+<p>
+  <strong>Group:</strong>
+  <%= @group_request.group %>
+</p>
+
+<p>
+  <strong>Pre auth:</strong>
+  <%= @group_request.pre_auth %>
+</p>
+
+<p>
+  <strong>Approved:</strong>
+  <%= @group_request.approved %>
+</p>
+
+<p>
+  <strong>Created by:</strong>
+  <%= @group_request.created_by %>
+</p>
+
+<p>
+  <strong>Updated by:</strong>
+  <%= @group_request.updated_by %>
+</p>
+
+<%= link_to 'Edit', edit_group_request_path(@group_request) %> |
+<%= link_to 'Back', group_requests_path %>

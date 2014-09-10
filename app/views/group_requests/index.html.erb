@@ -1,0 +1,37 @@
+<h1>Listing group_requests</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Group</th>
+      <th>Pre auth</th>
+      <th>Approved</th>
+      <th>Created by</th>
+      <th>Updated by</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @group_requests.each do |group_request| %>
+      <tr>
+        <td><%= group_request.user %></td>
+        <td><%= group_request.group %></td>
+        <td><%= group_request.pre_auth %></td>
+        <td><%= group_request.approved %></td>
+        <td><%= group_request.created_by %></td>
+        <td><%= group_request.updated_by %></td>
+        <td><%= link_to 'Show', group_request %></td>
+        <td><%= link_to 'Edit', edit_group_request_path(group_request) %></td>
+        <td><%= link_to 'Destroy', group_request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Group request', new_group_request_path %>

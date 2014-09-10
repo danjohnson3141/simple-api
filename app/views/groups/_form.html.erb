@@ -1,0 +1,57 @@
+<%= form_for(@group) do |f| %>
+  <% if @group.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@group.errors.count, "error") %> prohibited this group from being saved:</h2>
+
+      <ul>
+      <% @group.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :visible %><br>
+    <%= f.check_box :visible %>
+  </div>
+  <div class="field">
+    <%= f.label :leavable %><br>
+    <%= f.check_box :leavable %>
+  </div>
+  <div class="field">
+    <%= f.label :member_list %><br>
+    <%= f.check_box :member_list %>
+  </div>
+  <div class="field">
+    <%= f.label :group_type_id %><br>
+    <%= f.text_field :group_type_id %>
+  </div>
+  <div class="field">
+    <%= f.label :owner_user_id %><br>
+    <%= f.number_field :owner_user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :app_sponsor_id %><br>
+    <%= f.number_field :app_sponsor_id %>
+  </div>
+  <div class="field">
+    <%= f.label :created_by %><br>
+    <%= f.number_field :created_by %>
+  </div>
+  <div class="field">
+    <%= f.label :updated_by %><br>
+    <%= f.number_field :updated_by %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
